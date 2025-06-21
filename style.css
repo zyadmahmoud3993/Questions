@@ -151,11 +151,14 @@ body {
     color: red;
 }
 
-.quiztion .quiz-item:hover {
+.quiztion .quiz-item:not(:focus):hover  {
     background-color: #aed0fd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
 }
 
+.quiztion .quiz-item:focus {
+    outline: none;
+}
 .modal-footer .total-succ {
     font-size: 16px;
     font-weight: 700;
