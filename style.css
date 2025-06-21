@@ -176,7 +176,7 @@ body {
 
 .quiz-item.false {
     background-color: #fcd7d7;
-    animation: horizontal-shaking linear  1s;
+    animation: horizontal-shaking linear  2s;
 }
 
 .quiz-item.true {
