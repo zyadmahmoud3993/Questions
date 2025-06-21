@@ -14,13 +14,68 @@ body {
     align-items: center;
     height: 100vh;
 }
+.start{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 0.375rem;
+    box-shadow: -5px 0px 5px 1px rgb(40, 40, 175),
+    5px 0px 5px 4px rgb(62, 60, 165),
+    0px -5px 5px 4px rgb(41, 14, 176),
+    0px 10px 10px 4px rgb(70, 47, 161);
+    animation: hidden 2s linear ;
 
+}
+@keyframes hidden {
+    0% {
+        width: 20px;
+        height:0;
+    }
+    50% {
+        height: 60px;
+        width: 20px;
+    }
+    100% {
+        width: 90px;
+    }
+}
+.start::before{
+    content: '';
+    position: absolute;
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    width: 200%;
+    height: 200%;
+    z-index: -2 !important;
+    border-radius: 0.375rem;
+    animation: rotate 10s linear infinite;
+    
+}
+.start:hover{
+    transform: scale(1.05) translate(0px , -5px);
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#start{
+    background-color: transparent;
+    color:#84aace;
+}
 .btn {
     font-weight: 700;
     font-size: 20px;
     padding: 10px 20px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
     border: none;
+    z-index: 5 !important;
 }
 
 .btn-light {
@@ -28,11 +83,11 @@ body {
     color: #14426d;
 }
 
-.btn-light:hover {
+/* .btn-light:hover {
     color: #12263e;
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.35);
     border: solid 2px #0759a6;
-}
+} */
 
 
 .modal-title {
