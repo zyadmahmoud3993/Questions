@@ -52,10 +52,10 @@ function startQuiz(index) {
     next.style.pointerEvents = 'none';
     quiztion_item.innerHTML = `
         <span class="">${quiztion_random[index].quis}</span>
-        <div class="quiz-item">${quiztion_random[index].options[0]} ${quiztion_random[index].options[0].replace(/(&lt;|&gt;)/g, '') == quiztion_random[index].answer.replace(/(<|>)/g, '') ? '<i class="bi bi-check-circle icon"></i>' : '<i class="bi bi-x-circle icon"></i>'}</div>
-        <div class="quiz-item">${quiztion_random[index].options[1]} ${quiztion_random[index].options[1].replace(/(&lt;|&gt;)/g, '') == quiztion_random[index].answer.replace(/(<|>)/g, '') ? '<i class="bi bi-check-circle icon"></i>' : '<i class="bi bi-x-circle icon"></i>'}</div>
-        <div class="quiz-item">${quiztion_random[index].options[2]} ${quiztion_random[index].options[2].replace(/(&lt;|&gt;)/g, '') == quiztion_random[index].answer.replace(/(<|>)/g, '') ? '<i class="bi bi-check-circle icon"></i>' : '<i class="bi bi-x-circle icon"></i>'}</div>
-        <div class="quiz-item">${quiztion_random[index].options[3]} ${quiztion_random[index].options[3].replace(/(&lt;|&gt;)/g, '') == quiztion_random[index].answer.replace(/(<|>)/g, '') ? '<i class="bi bi-check-circle icon"></i>' : '<i class="bi bi-x-circle icon"></i>'}</div>
+        <div class="quiz-item hover">${quiztion_random[index].options[0]} ${quiztion_random[index].options[0].replace(/(&lt;|&gt;)/g, '') == quiztion_random[index].answer.replace(/(<|>)/g, '') ? '<i class="bi bi-check-circle icon"></i>' : '<i class="bi bi-x-circle icon"></i>'}</div>
+        <div class="quiz-item hover">${quiztion_random[index].options[1]} ${quiztion_random[index].options[1].replace(/(&lt;|&gt;)/g, '') == quiztion_random[index].answer.replace(/(<|>)/g, '') ? '<i class="bi bi-check-circle icon"></i>' : '<i class="bi bi-x-circle icon"></i>'}</div>
+        <div class="quiz-item hover">${quiztion_random[index].options[2]} ${quiztion_random[index].options[2].replace(/(&lt;|&gt;)/g, '') == quiztion_random[index].answer.replace(/(<|>)/g, '') ? '<i class="bi bi-check-circle icon"></i>' : '<i class="bi bi-x-circle icon"></i>'}</div>
+        <div class="quiz-item hover">${quiztion_random[index].options[3]} ${quiztion_random[index].options[3].replace(/(&lt;|&gt;)/g, '') == quiztion_random[index].answer.replace(/(<|>)/g, '') ? '<i class="bi bi-check-circle icon"></i>' : '<i class="bi bi-x-circle icon"></i>'}</div>
     `;
     From.textContent = index + 1;
     To.textContent = rangeQuiztion ?? 5;
@@ -65,7 +65,8 @@ function startQuiz(index) {
 
         item.addEventListener('click', () => {
             item.querySelector('.icon').classList.add('active');
-            item.textContent.trim() == quiztion_random[index].answer.trim() ? [item.classList.add('true'), curect++, curect_voice.play()] : [item.classList.add('false'), window.navigator.platform.includes('Win') ? error_voice.play() : window.navigator.vibrate([1000])];
+            item.classList.remove('hover')
+            item.textContent.trim() == quiztion_random[index].answer.trim() ? [item.classList.add('true'), curect++, curect_voice.play()] : [item.classList.add('false'), window.navigator.platform.includes('Win') ? error_voice.play() : window.navigator.vibrate[300]];
             quiz_item.forEach(item => {
                 item.style.pointerEvents = 'none';
                 item.textContent.trim() == quiztion_random[index].answer.trim() ? [item.querySelector('.icon').classList.add('active'), item.classList.add('true')] : false;
