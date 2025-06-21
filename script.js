@@ -65,7 +65,7 @@ function startQuiz(index) {
 
         item.addEventListener('click', () => {
             item.querySelector('.icon').classList.add('active');
-            settimeout(()=>{item.classList.remove('hover')},1250)
+            setTimeout(()=>{item.classList.remove('hover')},1250)
             item.textContent.trim() == quiztion_random[index].answer.trim() ? [item.classList.add('true'), curect++, curect_voice.play()] : [item.classList.add('false'), window.navigator.platform.includes('Win') ? error_voice.play() : window.navigator.vibrate[300]];
             quiz_item.forEach(item => {
                 item.style.pointerEvents = 'none';
