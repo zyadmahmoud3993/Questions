@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&display=swap');
+
+* {
+    font-family: "Cairo Play", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    transition: all 0.3s ease-in-out !important;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn {
+    font-weight: 700;
+    font-size: 20px;
+    padding: 10px 20px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
+    border: none;
+}
+
+.btn-light {
+    background-color: #cbd6e0;
+    color: #14426d;
+}
+
+.btn-light:hover {
+    color: #12263e;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.35);
+    border: solid 2px #0759a6;
+}
+
+
+.modal-title {
+    color: #14426d;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.modal-dialog {
+    box-shadow: 5px 5px 20px rgba(56, 55, 55, 0.526);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+.modal .center .modal-content{
+    z-index: -5;
+}
+
+.modal-body {
+    padding: 0px;
+}
+
+.modal-body span{
+    color: #14426d;
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.modal-body p {
+    color: #00294f;
+    font-size: 16px;
+    font-weight: 700;
+
+}
+
+.modal-header .btn-close {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.modal-body .timer {
+    font-size: 20px;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
+    padding: 15px;
+}
+
+.timer .time {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 10px;
+    color: white;
+}
+
+.style-quiztion {
+    padding: 10px;
+}
+
+.quiztion {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.quiztion .quiz-item {
+    background-color: #d7eafc;
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+
+.quiz-item.false {
+    background-color: #fcd7d7;
+    animation: horizontal-shaking linear  1s;
+}
+
+.quiz-item.true {
+    background-color: #caf9ba;
+}
+
+
+.quiztion .quiz-item i {
+    font-weight: bold;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    opacity: 0;
+}
+
+
+.quiz-item i.bi-check-circle.active {
+    opacity: 1;
+    background-color: rgb(173, 221, 173);
+    color: green;
+}
+
+.quiz-item i.bi-x-circle.active {
+    opacity: 1;
+    background-color: rgb(244, 210, 210);
+    color: red;
+}
+
+.quiztion .quiz-item:hover {
+    background-color: #aed0fd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+}
+
+.modal-footer .total-succ {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.modal-footer .total-succ span {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+.icon-king .fa-crown {
+    padding: 30px;
+    font-size: 100px;
+    color: rgb(255, 193, 7);
+}
+
+.icon-king .fa-crown:hover {
+    box-shadow: 0 0 10px rgb(255, 193, 7),
+        0 0 20px rgb(255, 193, 7),
+        0 0 30px rgb(255, 193, 7);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 0, 0.312);
+}
+
+.icon-king .fa-crown::after {
+    content: "";
+    position: absolute;
+    transform: translate(14.5px, 20px);
+    background-color: red;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px blue;
+}
+
+
+.icon-king::after {
+    content: "";
+    position: absolute;
+    transform: translate(93.3px, 37px);
+    background-color: red;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px blue;
+}
+
+.icon-king::before {
+    content: "";
+    position: absolute;
+    transform: translate(-30.5px, 49px);
+    background-color: red;
+    width: 13.5px;
+    height: 13.5px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px blue;
+}
+
+.text-done,
+.text-score {
+    font-size: 20px;
+    font-weight: 700;
+    color: #14426d;
+}
+
+
+
+
+#staticBackdrop1.modal.fade.trans , #staticBackdrop2.modal.fade.trans{
+    opacity: 0;
+    top: -60px;
+    animation: ani .5s both;
+    overflow: hidden;
+}
+.modal .center{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes ani {
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 700px) {
+  .modal .center .modal-content{
+    width: 100vw !important;
+  }
+}
+
+#timeSleepAnimat{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#timeSleepAnimat div{
+    margin-top: 5px;
+    width: 300px;
+    border: 2px solid rgb(37, 17, 166);
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+#timeSleepAnimat div div{
+    width: 0;
+    height: 200px;
+    background-color: slateblue;
+    animation: timeSleep 15s linear;
+}
+@keyframes timeSleep {
+    to{
+        width: 105%;
+    }
+}
+
+@keyframes horizontal-shaking {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  1% { transform: translate(-1px, -2px) rotate(-1deg); }
+  2% { transform: translate(-3px, 0px) rotate(1deg); }
+  3% { transform: translate(3px, 2px) rotate(0deg); }
+  4% { transform: translate(1px, -1px) rotate(1deg); }
+  5% { transform: translate(-1px, 2px) rotate(-1deg); }
+  6% { transform: translate(-3px, 1px) rotate(0deg); }
+  7% { transform: translate(3px, 1px) rotate(-1deg); }
+  8% { transform: translate(-1px, -1px) rotate(1deg); }
+  9% { transform: translate(1px, 2px) rotate(0deg); }
+  10% { transform: translate(1px, -2px) rotate(-1deg); }
+  11% { transform: translate(1px, 1px) rotate(0deg); }
+  12% { transform: translate(-1px, -2px) rotate(-1deg); }
+  13% { transform: translate(-3px, 0px) rotate(1deg); }
+  14% { transform: translate(3px, 2px) rotate(0deg); }
+  15% { transform: translate(1px, -1px) rotate(1deg); }
+  16% { transform: translate(-1px, 2px) rotate(-1deg); }
+  17% { transform: translate(-3px, 1px) rotate(0deg); }
+  18% { transform: translate(3px, 1px) rotate(-1deg); }
+  19% { transform: translate(-1px, -1px) rotate(1deg); }
+  20% { transform: translate(1px, 2px) rotate(0deg); }
+  21% { transform: translate(1px, -2px) rotate(-1deg); }
+}
