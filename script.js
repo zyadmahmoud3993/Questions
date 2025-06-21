@@ -66,7 +66,7 @@ function startQuiz(index) {
         item.addEventListener('click', () => {
             item.querySelector('.icon').classList.add('active');
             setTimeout(()=>{item.classList.remove('hover')},1250)
-            item.textContent.trim() == quiztion_random[index].answer.trim() ? [item.classList.add('true'), curect++, curect_voice.play()] : [item.classList.add('false'), window.navigator.platform.includes('Win') ? error_voice.play() : window.navigator.vibrate[300]];
+            item.textContent.trim() == quiztion_random[index].answer.trim() ? [item.classList.add('true'), curect++, curect_voice.play()] : [item.classList.add('false'), window.navigator.platform.includes('Win') ? error_voice.play() : window.navigator.vibrate([2000])];
             quiz_item.forEach(item => {
                 item.style.pointerEvents = 'none';
                 item.textContent.trim() == quiztion_random[index].answer.trim() ? [item.querySelector('.icon').classList.add('active'), item.classList.add('true')] : false;
